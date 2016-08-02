@@ -72,7 +72,12 @@ echo Port: ${port}
 
 cat >> /etc/syslog-ng/syslog-ng.conf <<EOM
 destination d_papertrail {
-  network("${host}" port(${port}) transport("tls") tls(ca_dir("/etc/syslog-ng/cert.d")) );
+  network(
+    "${host}"
+    port(${port})
+    transport("tls")
+    tls(ca_dir("/etc/syslog-ng/cert.d"))
+  );
 };
 log { source(s_all); destination(d_papertrail); };
 EOM
