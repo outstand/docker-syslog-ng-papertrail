@@ -5,7 +5,7 @@ if [ -z "$LOG_DESTINATION" ]; then
   exit 1
 fi
 
-if [ "$1" == 'rsyslogd']; then
+if [ "$1" == 'rsyslogd' ]; then
   echo 'Replacing rsyslogd command with syslog-ng -F'
   set -- syslog-ng -F
 fi
