@@ -5,6 +5,11 @@ if [ -z "$LOG_DESTINATION" ]; then
   exit 1
 fi
 
+if [ "$1" == 'rsyslogd']; then
+  echo 'Replacing rsyslogd command with syslog-ng -F'
+  set -- syslog-ng -F
+fi
+
 if [ -e /host/dev ]; then
     mount --rbind /host/dev /dev
 fi
