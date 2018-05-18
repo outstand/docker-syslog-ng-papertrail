@@ -4,7 +4,7 @@ MAINTAINER Ryan Schlesinger <ryan@outstand.com>
 RUN apk add --no-cache bash curl syslog-ng && \
     mkdir -p /tmp/build && \
     cd /tmp/build && \
-    echo '2782349be167b25355537c2ce2b395e7  papertrail-bundle.tar.gz' > papertrail-bundle.md5 && \
+    echo '23d82ae8698d41e75d1e85224d6a9ad5  papertrail-bundle.tar.gz' > papertrail-bundle.md5 && \
     curl -o papertrail-bundle.tar.gz https://papertrailapp.com/tools/papertrail-bundle.tar.gz && \
     md5sum -c papertrail-bundle.md5 && \
     mkdir -p /etc/syslog-ng/cert.d && \
