@@ -36,7 +36,7 @@ destination d_papertrail {
     tls(ca_dir("/etc/syslog-ng/cert.d"))
   );
 };
-log { source(s_all); destination(d_papertrail); };
+log { source(s_sys); destination(d_papertrail); };
 EOM
 
 echo Starting "$@"
