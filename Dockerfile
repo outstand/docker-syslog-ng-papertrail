@@ -14,10 +14,6 @@ RUN apk add --no-cache bash curl syslog-ng && \
     rm -rf /tmp/build && \
     apk del curl
 
-RUN mkdir /sidecar
-COPY syslog-ng-source.sidecar syslog-ng-source.std syslog-ng-source.kernel syslog-ng-plugins.std /etc/syslog-ng/
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-ENV SYSTEM_LOGGER true
-VOLUME ["/sidecar"]
 CMD ["syslog-ng", "-F"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
