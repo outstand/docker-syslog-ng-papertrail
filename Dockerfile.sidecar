@@ -1,2 +1,0 @@
-FROM outstand/syslog-ng-papertrail:latest
-ENV SYSTEM_LOGGER false
